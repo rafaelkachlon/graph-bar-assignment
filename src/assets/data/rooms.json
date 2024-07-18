@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Strawberry",
+    "buildingName": "KennedyA",
+    "labels": [4],
+    "capacity": 40,
+    "hasProjector": true,
+    "hasTv": true
+  },
+  {
+    "id": 2,
+    "name": "Blueberry",
+    "buildingName": "KennedyB",
+    "labels": [2],
+    "capacity": 20,
+    "hasProjector": false,
+    "hasTv": true
+  },
+  {
+    "id": 3,
+    "name": "Raspberry",
+    "buildingName": "KennedyC",
+    "labels": [3, 1],
+    "capacity": 30,
+    "hasProjector": true,
+    "hasTv": false
+  },
+  {
+    "id": 4,
+    "name": "Blackberry",
+    "buildingName": "KennedyD",
+    "labels": [4, 2],
+    "capacity": 50,
+    "hasProjector": true,
+    "hasTv": true
+  },
+  {
+    "id": 5,
+    "name": "Cranberry",
+    "buildingName": "KennedyE",
+    "labels": [1, 3],
+    "capacity": 25,
+    "hasProjector": false,
+    "hasTv": false
+  }
+]

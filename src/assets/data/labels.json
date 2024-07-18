@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Large",
+    "parentId": null
+  },
+  {
+    "id": 2,
+    "name": "Small",
+    "parentId": null
+  },
+  {
+    "id": 3,
+    "name": "Medium",
+    "parentId": null
+  },
+  {
+    "id": 4,
+    "name": "Executive",
+    "parentId": 1
+  },
+  {
+    "id": 5,
+    "name": "Standard",
+    "parentId": 2
+  }
+]
