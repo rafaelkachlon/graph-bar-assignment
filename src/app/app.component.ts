@@ -6,8 +6,7 @@ import { Room } from './models/room.model';
 import { Label } from './models/label.model';
 import { forkJoin } from 'rxjs';
 import { GraphColumn } from './models/graph-column.model';
-import { NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FilterSelectionComponent } from './filter-selection/filter-selection.component';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     RouterOutlet,
     GraphBarComponent,
-    NgFor,
-    FormsModule
+    FilterSelectionComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

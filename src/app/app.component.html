@@ -1,10 +1,2 @@
-<div class="filter-container">
-    <div class="select-container">
-        <div>use CTRL key or SHIFT key to select multiple options</div>
-        <select name="labels" id="labels" multiple [(ngModel)]="selectedLabels">
-            <option *ngFor="let label of labels()" [value]="label.id">{{label.name}}</option>
-        </select>
-    </div>
-    <button (click)="clearFilter()">Clear All</button>
-</div>
+<app-filter-selection [labels]="labels" [selectedLabels]="selectedLabels"></app-filter-selection>
 <app-graph-bar [data]="filteredData()" [width]="500" [height]="300"></app-graph-bar>
