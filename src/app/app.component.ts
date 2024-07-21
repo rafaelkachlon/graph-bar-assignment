@@ -4,7 +4,7 @@ import { GraphBarComponent } from "./graph-bar/graph-bar.component";
 import { HttpClient } from '@angular/common/http';
 import { Room } from './models/room.model';
 import { Label } from './models/label.model';
-import { forkJoin } from 'rxjs';
+import { forkJoin, take } from 'rxjs';
 import { GraphColumn } from './models/graph-column.model';
 import { FilterSelectionComponent } from './filter-selection/filter-selection.component';
 
@@ -31,13 +31,15 @@ export class AppComponent implements OnInit {
     forkJoin([
       this.http.get<Room[]>('assets/data/rooms.json'),
       this.http.get<Label[]>('assets/data/labels.json')
-    ]).subscribe(([rooms, labels]) => {
-      this.labels.set(labels);
-      const labelsMap: Map<number, Label> = this.createLabelsMap(labels);
-      const labelCapacity: Map<number, number> = this.calculateLabelCapacities(rooms, labels, labelsMap);
-      const data: GraphColumn[] = this.transformToGraphData(labelCapacity, labelsMap);
-      this.data.set(data);
-    });
+    ])
+      .pipe(take(1))
+      .subscribe(([rooms, labels]) => {
+        this.labels.set(labels);
+        const labelsMap: Map<number, Label> = this.createLabelsMap(labels);
+        const labelCapacity: Map<number, number> = this.calculateLabelCapacities(rooms, labels, labelsMap);
+        const data: GraphColumn[] = this.transformToGraphData(labelCapacity, labelsMap);
+        this.data.set(data);
+      });
   }
 
   public filterBySelectedLabels(): GraphColumn[] {
